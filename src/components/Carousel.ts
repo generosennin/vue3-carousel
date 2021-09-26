@@ -186,7 +186,7 @@ export default defineComponent({
       paginationCount.value = slides.value.length;
       slidesCount.value = slides.value.length;
       middleSlide.value = Math.ceil((slidesCount.value - 1) / 2);
-      currentSlide.value = Math.min(slidesCount.value - 1, currentSlide.value);
+      currentSlide.value = Math.max(0, currentSlide.value);
     }
 
     function updateSlidesBuffer(): void {
