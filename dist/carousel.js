@@ -327,6 +327,8 @@
               if (!mute) {
                   emit('update:modelValue', currentSlide.value);
               }
+              console.log('update');
+              emit('current', currentSlide.value);
               setTimeout(() => {
                   if (config.wrapAround)
                       updateSlidesBuffer();

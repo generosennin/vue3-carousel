@@ -316,6 +316,8 @@ export default defineComponent({
       if (!mute) {
         emit('update:modelValue', currentSlide.value);
       }
+      console.log('update')
+      emit('current', currentSlide.value);      
       setTimeout((): void => {
         if (config.wrapAround) updateSlidesBuffer();
         isSliding.value = false;
