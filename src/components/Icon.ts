@@ -15,6 +15,11 @@ const Icon = (props: Data) => {
   const iconTitle = props.title || iconName;
   const titleEl = h('title', null, iconName);
 
+  const circleEl = h('circle', {
+    cx: 40,
+    cy: 40,
+    r: 20
+  });
   return h(
     'svg',
     {
@@ -22,7 +27,7 @@ const Icon = (props: Data) => {
       viewBox: '0 0 24 24',
       role: 'img',
     },
-    [titleEl, pathEl]
+    [titleEl, pathEl, circleEl]
   );
 };
 
