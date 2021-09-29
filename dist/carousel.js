@@ -329,6 +329,7 @@
               }
               console.log('update');
               emit('current', currentSlide.value);
+              console.log(currentSlide.value);
               setTimeout(() => {
                   if (config.wrapAround)
                       updateSlidesBuffer();
@@ -436,11 +437,16 @@
       const pathEl = vue.h('path', { d: path });
       props.title || iconName;
       const titleEl = vue.h('title', null, iconName);
+      const circleEl = vue.h('circle', {
+          cx: 40,
+          cy: 40,
+          r: 20
+      });
       return vue.h('svg', {
           class: 'carousel__icon',
           viewBox: '0 0 24 24',
           role: 'img',
-      }, [titleEl, pathEl]);
+      }, [titleEl, pathEl, circleEl]);
   };
   Icon.props = { name: String, title: String };
 

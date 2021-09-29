@@ -325,6 +325,7 @@ var Carousel = defineComponent({
             }
             console.log('update');
             emit('current', currentSlide.value);
+            console.log(currentSlide.value);
             setTimeout(() => {
                 if (config.wrapAround)
                     updateSlidesBuffer();
@@ -432,11 +433,16 @@ const Icon = (props) => {
     const pathEl = h('path', { d: path });
     props.title || iconName;
     const titleEl = h('title', null, iconName);
+    const circleEl = h('circle', {
+        cx: 40,
+        cy: 40,
+        r: 20
+    });
     return h('svg', {
         class: 'carousel__icon',
         viewBox: '0 0 24 24',
         role: 'img',
-    }, [titleEl, pathEl]);
+    }, [titleEl, pathEl, circleEl]);
 };
 Icon.props = { name: String, title: String };
 
